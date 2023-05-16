@@ -20,5 +20,24 @@ namespace BookItWeb.Controllers
             return View();  
         }
 
+        [HttpPost]
+        public IActionResult Create(Category obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            if (obj.DisplayOrder.Equals(0))
+            {
+                ModelState.Remove("DisplayOrder");
+                ModelState.AddModelError("DisplayOrder", "please enter a number");
+
+            }
+
+            return View();
+        }
+
     }
 }
