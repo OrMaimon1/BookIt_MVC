@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace BookItWeb.Migrations
+namespace BookIt.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

@@ -1,7 +1,7 @@
-﻿using BookItWeb.Models;
+﻿using BookIt.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookItWeb.Data
+namespace BookIt.DataAccess.Data
 {
     public class ApplicationDbContext :DbContext
     {

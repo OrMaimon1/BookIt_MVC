@@ -1,5 +1,5 @@
-﻿using BookItWeb.Data;
-using BookItWeb.Models;
+﻿using BookIt.DataAccess.Data;
+using BookIt.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookItWeb.Controllers
