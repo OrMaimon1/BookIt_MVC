@@ -1,3 +1,5 @@
+
+
 html {
   font-size: 14px;
 }
@@ -19,4 +21,135 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+.badge {
+    background-color: rgba(189, 116, 24, 0.6);
+    color: white;
+}
+
+.text-warning {
+    color: #c03924 !important;
+}
+
+.text-secondary {
+    color: #425F4B !important;
+}
+
+.text-primary {
+    color: #014872 !important;
+}
+
+.text-success {
+    color: #4b7147 !important;
+}
+
+.bg-primary {
+    background-color: #014872 !important;
+}
+
+.bg-secondary {
+    background-color: #bdecf0 !important;
+}
+
+bg-success {
+    background-color: #d7ede1 !important;
+}
+
+.card {
+    border-color: #425F4B !important;
+}
+
+
+        /* btn-outline-primary */
+
+
+.btn-outline-primary {
+    color: #192a73;
+    border-color: #192a73;
+}
+
+
+
+    .btn-outline-primary:hover {
+        color: #fff;
+        background-color: #192a73;
+        border-color: #192a73;
+    }
+
+
+.btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(25, 46, 47, 0.5);
+}
+
+.btn-outline-warning {
+    color: #c03924;
+    border-color: #c03924;
+}
+
+
+
+.btn-outline-warning:hover {
+    color: #fff;
+    background-color: #c03924;
+    border-color: #c03924;
+}
+
+
+
+.btn-outline-secondary {
+    color: #134b5f;
+    border-color: #134b5f;
+}
+
+
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #134b5f;
+    border-color: #134b5f;
+}
+
+
+
+
+/* btn-primary */
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #192a73;
+    border-color: #014872;
+}
+
+
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #445f5e;
+    border-color: #445f5e;
+}
+
+
+
+.text-white {
+    background-color: #014872;
+    text-align: center;
 }
