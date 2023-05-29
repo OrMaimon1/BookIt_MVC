@@ -56,18 +56,40 @@ namespace BookItWeb.Areas.Admin.Controllers
                 string wwwRootPath = _WebHostEnvironment.WebRootPath;
                 if(file != null) 
                 { 
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    string productPath = Path.Combine(wwwRootPath, @"images\product");
 
-                    using(var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string productPath = Path.Combine(wwwRootPath, @"images\product\");
+                    if(!string.IsNullOrEmpty(obj.Product.ImageUrl))
+                    {
+                        var oldImagePath =Path.Combine(wwwRootPath,obj.Product.ImageUrl.TrimStart('\\'));
+
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+                    using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
                     {
                         file.CopyTo(fileStream);
                     }
 
-                    obj.Product.ImageUrl= @"\images\product"+fileName;
+                    obj.Product.ImageUrl= @"\images\product\"+fileName;
                     
                 }
-                _UnitOfWork.Product.Add(obj.Product);
+                if(obj.Product.Id == 0) 
+                {
+                    _UnitOfWork.Product.Add(obj.Product);
+
+                }
+                else 
+                {
+                    _UnitOfWork.Product.Update(obj.Product);
+
+                }
+                //if (obj.Product.ImageUrl == null)
+                //{
+                //    obj.Product.ImageUrl = "";
+                //}
                 _UnitOfWork.Save();
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");

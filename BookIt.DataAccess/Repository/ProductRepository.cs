@@ -19,7 +19,21 @@ namespace BookIt.DataAccess.Repository
 
         public void Update(Product obj)
         {
-            _db.Products.Update(obj);
+            var objFromDb =_db.Products.FirstOrDefault(x => x.Id == obj.Id);
+            if (objFromDb != null) 
+            { 
+                objFromDb.Title = obj.Title;
+                objFromDb.BookNumber = obj.BookNumber;
+                objFromDb.Price = obj.Price;
+                objFromDb.Price50 = obj.Price50;
+                objFromDb.Price100 = obj.Price100;
+                objFromDb.ListPrice = obj.ListPrice;
+                objFromDb.Author = obj.Author;
+                objFromDb.Description = obj.Description;
+                objFromDb.CategoryId = obj.CategoryId;
+                objFromDb.ImageUrl = obj.ImageUrl;
+                
+            }
         }
     }
 }
