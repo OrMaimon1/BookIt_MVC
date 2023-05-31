@@ -1,11 +1,14 @@
 ﻿using BookIt.DataAccess.Data;
 using BookIt.DataAccess.Repository.IRepository;
 using BookIt.Models;
+using BookIt.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookItWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles =SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _UnitOfWork;
